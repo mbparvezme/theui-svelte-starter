@@ -1,6 +1,7 @@
-<script>
-  import "theui-sveltekit/style"
-  import "../app.pcss"
+<script lang="ts">
+	import '../app.css';
+
+	let { children } = $props();
 </script>
 
-<slot></slot>
+{@render children()}

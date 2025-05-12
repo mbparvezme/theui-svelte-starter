@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@import 'theui-svelte/style';
+@source "../node_modules/theui-svelte";
