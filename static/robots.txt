@@ -1,0 +1,4 @@
+# Allow crawling everything by default. Narrow this before you ship anything
+# that should not be indexed.
+User-agent: *
+Allow: /
