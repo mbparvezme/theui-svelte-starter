@@ -1,7 +1,6 @@
 node_modules
-package_lock.json
 
-# Output
+# Build output
 .output
 .vercel
 .netlify
@@ -22,4 +21,9 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-package-lock.json
+
+# Agent rules
+# Re-included: a global ignore rule excludes AGENTS.md in every repository, and
+# this one is the pointer `npx theui ai` writes. It belongs in the repo so every
+# agent on the project works from the same rules.
+!AGENTS.md

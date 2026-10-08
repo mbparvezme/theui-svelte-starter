@@ -2,8 +2,23 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<!--
+			Applies the saved theme before the first paint. The DarkMode component sets
+			the class on mount, which is after hydration, so without this a
+			server-rendered page paints light and then snaps to dark. Kept inline and
+			blocking on purpose: deferring it is the flash.
+		-->
+		<script>
+			try {
+				const t =
+					localStorage.getItem('theui-theme') ??
+					(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+				if (t === 'dark') document.documentElement.classList.add('dark');
+			} catch {}
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">

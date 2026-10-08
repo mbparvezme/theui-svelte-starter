@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+@import 'theui-svelte/style';
+
+/* Those two lines are the whole setup, and the order matters. Tailwind comes
+   first and has to stay: as of 3.1.0 the library's stylesheet no longer imports
+   Tailwind itself. The library's stylesheet brings the design tokens, the dark
+   variant and the forms plugin, and registers its own markup for Tailwind to
+   scan, so there is no @source line to add.
+
+   Your brand lives below. Components read these variables rather than hard-coded
+   colors, so overriding one here re-themes every component at once - there is
+   nothing to change inside the library. The full set of tokens, including the
+   surface and text colors, is documented at https://www.theui.dev/docs/colors
+
+@theme {
+	--color-brand-500: oklch(0.62 0.19 260);
+	--text-color-on-brand: white;
+}
+*/
